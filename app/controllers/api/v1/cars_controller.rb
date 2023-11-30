@@ -33,7 +33,7 @@ class Api::V1::CarsController < ApplicationController
     @car = Car.find(params[:id])
     respond_to do |format|
       if @car.destroy
-        format.json { render status: :destroyed, json: {} }
+        format.json { render json: @car, status: :accepted }
       else
         format.json { render json: @car.errors, status: :unprocessable_entity }
       end

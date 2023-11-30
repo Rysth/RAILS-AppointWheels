@@ -2,19 +2,30 @@ class Api::V1::RentalsController < ApplicationController
   before_action :set_user, only: %i[index create destroy]
 
   def index
-    @rentals = @user.rentals.all
+    @rentals = @user.rentals
     render json: @rentals
   end
 
   def create
     @rental = @user.rentals.build(rental_params)
-    render json: @rental
+    respond_to do |format|
+      if @rental.save
+        format.json { render json: @rental, status: :created }
+      else
+        format.json { render json: @rental.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
     @rental = @user.rentals.find(params[:id])
-    @rental.destroy
-    render json: @rental
+    respond_to do |format|
+      if @rental.destroy
+        format.json { render json: @rental, status: :accepted }
+      else
+        format.json { render json: @rental.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   private
