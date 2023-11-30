@@ -8,6 +8,7 @@ require 'faker'
     description: Faker::Vehicle.standard_specs,
     price_per_day: Faker::Number.decimal(l_digits: 2),
     vehicle_type: Faker::Vehicle.model,
+    removed: Faker::Boolean.boolean,
   )
 end
 

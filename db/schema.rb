@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_170945) do
     t.text "description", null: false
     t.float "price_per_day", null: false
     t.string "vehicle_type", null: false
+    t.boolean "removed", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
