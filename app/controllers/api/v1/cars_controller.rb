@@ -19,21 +19,20 @@ class Api::V1::CarsController < ApplicationController
   # POST /users/new
   def create
     @car = Car.new(car_params)
-      if @car.save
-        render json: @car
-      else
-        render json: @car.errors
-      end
+    if @car.save
+      render json: @car
+    else
+      render json: @car.errors
+    end
   end
 
   # DELETE /cars/:id
   def destroy
     @car = Car.find(params[:id])
-      if @car.destroy
-        render json: @car
-      else
-        render json: @car.errors
-      end
+    if @car.destroy
+      render json: @car
+    else
+      render json: @car.errors
     end
   end
 
