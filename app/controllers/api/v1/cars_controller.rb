@@ -31,10 +31,12 @@ class Api::V1::CarsController < ApplicationController
   # DELETE /cars/:id
   def destroy
     @car = Car.find(params[:id])
-    if @car.destroy
-      format.json { render status: :destroyed }
-    else
-      format.json { render json: @car.errors, status: :unprocessable_entity }
+    respond_to do |format|
+      if @car.destroy
+        format.json { render status: :destroyed, json: {} }
+      else
+        format.json { render json: @car.errors, status: :unprocessable_entity }
+      end
     end
   end
 

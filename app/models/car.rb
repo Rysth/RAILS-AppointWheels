@@ -1,5 +1,5 @@
 class Car < ApplicationRecord
-  has_many :rentals
+  has_many :rentals, dependent: :destroy
 
   validates :model, presence: true, uniqueness: { case_sensitive: false }
   validates :seats, presence: true
