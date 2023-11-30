@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Api::V1::UsersController < ApplicationController
 
   # GET /users/new
   def new
@@ -19,8 +19,8 @@ class UsersController < ApplicationController
   end
 
   private
-    # Only allow a list of trusted parameters through.
-    def user_params
-      params.require(:user).permit(:name, :password)
-    end
+
+  def user_params
+    params.require(:user).permit(:name, :password)
+  end
 end
