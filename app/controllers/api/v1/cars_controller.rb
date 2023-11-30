@@ -29,7 +29,6 @@ class Api::V1::CarsController < ApplicationController
   # DELETE /cars/:id
   def destroy
     @car = Car.find(params[:id])
-    respond_to do |format|
       if @car.destroy
         render json: @car
       else
