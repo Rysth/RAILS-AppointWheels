@@ -1,4 +1,4 @@
-class Api::V1::Users::SessionsController < Devise::SessionsController
+class Users::SessionsController < Devise::SessionsController
   include RackSessionsFix
   respond_to :json
 
