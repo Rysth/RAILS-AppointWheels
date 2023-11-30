@@ -17,10 +17,9 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
-  username: john
+  username: postgres
   password: 12345
-  # Default port: 5432
-  port: 5433
+  port: 5432
 
 development:
   <<: *default
@@ -83,5 +82,5 @@ test:
 production:
   <<: *default
   database: rails_appointwheels_production
-  username: rails_template
+  username: postgres
   password: <%= ENV["rails_appointwheels_DATABASE_PASSWORD"] %>
