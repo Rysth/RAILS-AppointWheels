@@ -19,13 +19,11 @@ class Api::V1::CarsController < ApplicationController
   # POST /users/new
   def create
     @car = Car.new(car_params)
-    respond_to do |format|
       if @car.save
-        format.json { render @car, status: :created }
+        render json: @car
       else
-        format.json { render json: @car.errors, status: :unprocessable_entity }
+        render json: @car.errors
       end
-    end
   end
 
   # DELETE /cars/:id
@@ -33,9 +31,9 @@ class Api::V1::CarsController < ApplicationController
     @car = Car.find(params[:id])
     respond_to do |format|
       if @car.destroy
-        format.json { render json: @car, status: :accepted }
+        render json: @car
       else
-        format.json { render json: @car.errors, status: :unprocessable_entity }
+        render json: @car.errors
       end
     end
   end
@@ -43,6 +41,6 @@ class Api::V1::CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:model, :seats, :description, :price_per_day, :vehicle_type)
+    params.require(:car).permit(:model, :seats, :description, :price_per_day, :vehicle_type, :removed)
   end
 end
