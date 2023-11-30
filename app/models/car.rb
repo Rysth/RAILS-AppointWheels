@@ -1,4 +1,6 @@
 class Car < ApplicationRecord
+  has_many :rentals
+
   validates :model, presence: true, uniqueness: { case_sensitive: false }
   validates :seats, presence: true
   validates :description, presence: true
