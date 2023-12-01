@@ -19,30 +19,26 @@ class Api::V1::CarsController < ApplicationController
   # POST /users/new
   def create
     @car = Car.new(car_params)
-    respond_to do |format|
-      if @car.save
-        format.json { render @car, status: :created }
-      else
-        format.json { render json: @car.errors, status: :unprocessable_entity }
-      end
+    if @car.save
+      render json: @car
+    else
+      render json: @car.errors
     end
   end
 
   # DELETE /cars/:id
   def destroy
     @car = Car.find(params[:id])
-    respond_to do |format|
-      if @car.destroy
-        format.json { render json: @car, status: :accepted }
-      else
-        format.json { render json: @car.errors, status: :unprocessable_entity }
-      end
+    if @car.destroy
+      render json: @car
+    else
+      render json: @car.errors
     end
   end
 
   private
 
   def car_params
-    params.require(:car).permit(:model, :seats, :description, :price_per_day, :vehicle_type)
+    params.require(:car).permit(:model, :seats, :description, :price_per_day, :vehicle_type, :removed)
   end
 end

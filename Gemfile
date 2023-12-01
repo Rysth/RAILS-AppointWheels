@@ -74,8 +74,10 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-gem 'devise', '~> 4.9'
+gem 'devise'
+gem 'devise-jwt'
 gem 'faker'
 gem 'foreman', '~> 0.87.2'
+gem 'jsonapi-serializer'
 gem 'rack-cors'
 gem 'tailwindcss-rails', '~> 2.0'

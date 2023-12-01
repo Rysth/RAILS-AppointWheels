@@ -8,23 +8,19 @@ class Api::V1::RentalsController < ApplicationController
 
   def create
     @rental = @user.rentals.build(rental_params)
-    respond_to do |format|
-      if @rental.save
-        format.json { render json: @rental, status: :created }
-      else
-        format.json { render json: @rental.errors, status: :unprocessable_entity }
-      end
+    if @rental.save
+      render json: @rental
+    else
+      render json: @rental.errors
     end
   end
 
   def destroy
     @rental = @user.rentals.find(params[:id])
-    respond_to do |format|
-      if @rental.destroy
-        format.json { render json: @rental, status: :accepted }
-      else
-        format.json { render json: @rental.errors, status: :unprocessable_entity }
-      end
+    if @rental.destroy
+      render json: @rental
+    else
+      render json: @rental.errors
     end
   end
 
