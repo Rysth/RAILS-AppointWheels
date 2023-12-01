@@ -6,4 +6,5 @@ class Car < ApplicationRecord
   validates :description, presence: true
   validates :price_per_day, presence: true
   validates :vehicle_type, presence: true
+  validates :image_url, presence: true
 end
