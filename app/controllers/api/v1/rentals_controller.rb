@@ -31,6 +31,6 @@ class Api::V1::RentalsController < ApplicationController
   end
 
   def rental_params
-    params.require(:rental).permit(:total_price, :start_date, :end_date, :car_id, :user_id)
+    params.require(:rental).permit(:total_price, :start_date, :end_date, :car_id, :user_id, :city)
   end
 end
