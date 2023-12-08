@@ -21,7 +21,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_210553) do
     t.float "price_per_day", null: false
     t.string "vehicle_type", null: false
     t.string "image_url", null: false
-    t.boolean "removed", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,6 +29,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_210553) do
     t.float "total_price", null: false
     t.date "start_date", null: false
     t.date "end_date", null: false
+    t.string "city", null: false
     t.bigint "car_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
