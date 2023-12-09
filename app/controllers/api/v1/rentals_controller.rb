@@ -2,8 +2,8 @@ class Api::V1::RentalsController < ApplicationController
   before_action :set_user, only: %i[index create destroy]
 
   def index
-    @rentals = @user.rentals
-    render json: @rentals
+    @rentals = @user.rentals.includes([:car])
+    render json: @rentals.to_json(include: { car: { only: %i[id image_url model] } })
   end
 
   def create
@@ -11,6 +11,7 @@ class Api::V1::RentalsController < ApplicationController
     if @rental.save
       render json: @rental
     else
+      puts @rental.errors.full_messages
       render json: @rental.errors
     end
   end
