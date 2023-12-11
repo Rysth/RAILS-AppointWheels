@@ -18,8 +18,7 @@ class ApplicationController < ActionController::API
 
     begin
       secret_key = Rails.application.credentials.devise_jwt_secret_key
-      decoded_token = JWT.decode(token, secret_key, true, algorithm: 'HS256')
-
+      JWT.decode(token, secret_key, true)
     rescue JWT::DecodeError
       render json: { error: 'Invalid token' }, status: :unauthorized
     end
