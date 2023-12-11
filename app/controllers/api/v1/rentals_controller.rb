@@ -1,4 +1,5 @@
 class Api::V1::RentalsController < ApplicationController
+  before_action :authenticate_user
   before_action :set_user, only: %i[index create destroy]
 
   def index
