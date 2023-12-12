@@ -1,4 +1,6 @@
 class Api::V1::CarsController < ApplicationController
+  before_action :authenticate_user
+  load_and_authorize_resource
   # GET /cars
   def index
     @cars = Car.all.order(created_at: :desc)
