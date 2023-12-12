@@ -1,10 +1,11 @@
 require 'faker'
 
 # Creating users
-User.create(name: 'John', email: 'johnpalacios.t@gmail.com', password: '123456')
-User.create(name: 'Ismael', email: 'mastronardiismael@gmail.com', password: '123456')
-User.create(name: 'Karim', email: 'karimdavid07@gmail.com', password: '123456')
-User.create(name: 'Soban', email: 'Soban.syeed@gmail.com', password: '123456')
+User.create(name: 'John', email: 'johnpalacios.t@gmail.com', password: '123456', role: 'admin')
+User.create(name: 'Ismael', email: 'mastronardiismael@gmail.com', password: '123456', role: 'admin')
+User.create(name: 'Karim', email: 'karimdavid07@gmail.com', password: '123456', role: 'admin')
+User.create(name: 'Soban', email: 'Soban.syeed@gmail.com', password: '123456', role: 'admin')
+User.create(name: 'test', email: 'test@gmail.com', password: '123456', role: 'user')
 
 # Creating Cars
 Car.create(model: 'Corolla', seats: 4, description: "The Toyota Corolla isn't here to wow or excite. Instead, it offers a safe predictable ride no matter how far the trip is.", price_per_day: 125.25, vehicle_type: 'Sedan', image_url: 'https://www.motortrend.com/uploads/sites/10/2019/03/2020-toyota-corolla-le-sedan-angular-front.png')
