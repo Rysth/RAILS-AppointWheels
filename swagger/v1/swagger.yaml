@@ -1,0 +1,128 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/cars":
+    get:
+      summary: list cars
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create car
+      responses:
+        '200':
+          description: successful
+  "/api/v1/cars/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    delete:
+      summary: delete car
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users/{user_id}/rentals":
+    parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: list rentals
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create rental
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users/{user_id}/rentals/{id}":
+    parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: string
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    delete:
+      summary: delete rental
+      responses:
+        '200':
+          description: successful
+  "/signup/cancel":
+    get:
+      summary: cancel registration
+      responses:
+        '200':
+          description: successful
+  "/signup/sign_up":
+    get:
+      summary: new registration
+      responses:
+        '200':
+          description: successful
+  "/signup/edit":
+    get:
+      summary: edit registration
+      responses:
+        '200':
+          description: successful
+  "/signup":
+    patch:
+      summary: update registration
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update registration
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete registration
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create registration
+      responses:
+        '200':
+          description: successful
+  "/login":
+    get:
+      summary: new session
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create session
+      responses:
+        '200':
+          description: successful
+  "/logout":
+    delete:
+      summary: delete session
+      responses:
+        '200':
+          description: successful
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
