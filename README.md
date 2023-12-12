@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="/app/assets/images/ERD.png">
-    <img src="/app/assets/images/ERD.png" alt="Logo" width="350" height="200">
+    <img src="/app/assets/images/ERD.png" alt="Logo">
   </a>
   <h1 align="center">Appoint Wheels ERD</h1>
 </div>
