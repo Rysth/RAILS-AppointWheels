@@ -123,7 +123,7 @@ First you need to setup the JWT key the database
 You can setup the database with:
 
 ```sh
-  rail db:setup
+  rails db:setup
 ```
 
 To run the server:
