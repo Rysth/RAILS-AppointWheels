@@ -4,7 +4,7 @@
   <a href="/app/assets/images/ERD.png">
     <img src="/app/assets/images/ERD.png" alt="Logo">
   </a>
-  <h1 align="center">Appoint Wheels ERD</h1>
+  <h1 align="center">Appoint Wheels ERD - Backend</h1>
 </div>
 
 <!-- TABLE OF CONTENTS -->
