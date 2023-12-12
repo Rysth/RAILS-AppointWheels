@@ -4,8 +4,8 @@ class Api::V1::RentalsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @rentals = @user.rentals
-    render json: @rentals
+    @rentals = current_user.rentals.includes([:car])
+    render json: @rentals.to_json(include: { car: { only: %i[id image_url model] } })
   end
 
   def create
@@ -33,6 +33,6 @@ class Api::V1::RentalsController < ApplicationController
   end
 
   def rental_params
-    params.require(:rental).permit(:total_price, :start_date, :end_date, :car_id, :user_id)
+    params.require(:rental).permit(:total_price, :start_date, :end_date, :car_id, :user_id, :city)
   end
 end
