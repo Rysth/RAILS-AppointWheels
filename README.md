@@ -73,7 +73,7 @@
 
 ## 📖 API Documentation <a name="api-documentation"></a>
 
-- [**API Documentation**](http://127.0.0.1:3001/api-docs/index.html)
+- [**API Documentation**](http://127.0.0.1:3001/api-docs/index.html) in order to see the API documentation, you need to run the project locally and go to the link provided.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
