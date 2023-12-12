@@ -7,7 +7,6 @@ class CreateCars < ActiveRecord::Migration[7.1]
       t.float :price_per_day, null: false
       t.string :vehicle_type, null: false
       t.string :image_url, null: false
-      t.boolean :removed, default: false, null: false
       t.timestamps
     end
   end

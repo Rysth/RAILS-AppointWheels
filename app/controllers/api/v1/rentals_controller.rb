@@ -13,6 +13,7 @@ class Api::V1::RentalsController < ApplicationController
     if @rental.save
       render json: @rental
     else
+      puts @rental.errors.full_messages
       render json: @rental.errors
     end
   end
