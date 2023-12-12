@@ -1,5 +1,6 @@
 class Api::V1::CarsController < ApplicationController
   before_action :authenticate_user
+  load_and_authorize_resource
   # GET /cars
   def index
     @cars = Car.all.order(created_at: :desc)
@@ -30,6 +31,7 @@ class Api::V1::CarsController < ApplicationController
   # DELETE /cars/:id
   def destroy
     @car = Car.find(params[:id])
+    # authorize! :destroy, @car
     if @car.destroy
       render json: @car
     else
