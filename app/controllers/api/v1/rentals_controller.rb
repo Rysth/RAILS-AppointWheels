@@ -1,5 +1,7 @@
 class Api::V1::RentalsController < ApplicationController
+  before_action :authenticate_user
   before_action :set_user, only: %i[index create destroy]
+  load_and_authorize_resource
 
   def index
     @rentals = @user.rentals
