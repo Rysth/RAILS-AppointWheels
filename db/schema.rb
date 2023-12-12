@@ -30,6 +30,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_210553) do
     t.float "total_price", null: false
     t.date "start_date", null: false
     t.date "end_date", null: false
+    t.string "city", null: false
     t.bigint "car_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
@@ -40,6 +41,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_210553) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
+    t.string "role", default: "user"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
