@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::API
-  before_action :authenticate_user
-  before_action :set_user, only: %i[index create destroy]
-  load_and_authorize_resource
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
 
