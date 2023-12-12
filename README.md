@@ -163,8 +163,8 @@ Feel free to check the [issues page](../../issues/).
 I would like to thank the following:
 
 - [Microverse](https://www.microverse.org/) for assigning us this project
-- Our Stand Up Teams for their feedback
-- Team members for their collaboration
+- Our Stand Up Teams for their feedback and suggestions
+- Team members for their collaboration to the project
 
 Attribution:
 
