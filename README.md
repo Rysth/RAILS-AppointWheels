@@ -94,7 +94,39 @@ Install this project with:
 
 ### Usage <a name="usage"></a>
 
-To run the project, execute the following command:
+To run the project:
+
+First you need to setup the JWT key the database
+
+1. Delete credentials.yml.enc and master.key(if present)
+
+2. Generate a secret JWT key with:
+
+```sh
+  bundle exec rake secret
+```
+
+3. Save the generated secret key on a notepad
+
+4. Generate new credentials and master key with:
+
+```sh
+  EDITOR='code --wait' rails credentials:edit
+```
+
+5. A new tab/window will open add the value 'devise_jwt_secret_key:' with secret key
+
+<img src="/app/assets/images/JWT-guide.png" alt="JWT key guide">
+
+6. Close the tab/window to save the configuration
+
+You can setup the database with:
+
+```sh
+  rail db:setup
+```
+
+To run the server:
 
 ```sh
   rails server
