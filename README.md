@@ -105,6 +105,10 @@ First you need to setup the JWT key the database
 ```sh
   bundle exec rake secret
 ```
+If the above command doesn't work use this:
+```sh
+  rails secret
+```
 
 3. Save the generated secret key on a notepad
 
