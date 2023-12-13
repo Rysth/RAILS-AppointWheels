@@ -133,7 +133,7 @@ You can setup the database with:
 To run the server:
 
 ```sh
-  rails server
+  rails server -p 3001
 ```
 
 ### Linters <a name="linters"></a>
