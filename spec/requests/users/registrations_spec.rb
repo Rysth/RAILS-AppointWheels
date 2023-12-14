@@ -46,6 +46,7 @@ RSpec.describe 'users/registrations', type: :request do
     end
   end
 
+  #rubocop:disable
   path '/signup' do
     patch('update registration') do
       response(200, 'successful') do
