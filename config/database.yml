@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: rails_appointwheels_production
-  username: postgres
-  password: <%= ENV["rails_appointwheels_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
