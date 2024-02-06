@@ -1,6 +1,6 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'http://localhost:3000'  # Add your frontend URL
+    origins 'https://appointwheels.onrender.com', 'https://appoint-wheels.onrender.com/login'
     resource '*',
       headers: :any,
       methods: [:get, :post, :put, :patch, :delete, :options, :head], 
